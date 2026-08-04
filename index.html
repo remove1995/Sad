@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Волшебный сад — детская игра для изучения слов о природе">
+  <title>Волшебный сад</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <header class="top-panel">
+      <div class="title-sign">
+        <span class="vine vine-left" aria-hidden="true">🌿</span>
+        <span class="vine vine-right" aria-hidden="true">🌸</span>
+        <p class="eyebrow" id="eyebrow">Игра для юных садовников</p>
+        <h1 id="game-title">Волшебный<br>сад</h1>
+        <p id="subtitle">Печатай слова — и сад оживёт!</p>
+      </div>
+
+      <div class="language-switch" aria-label="Выбор языка">
+        <button class="language-button active" data-language="ru" type="button" aria-pressed="true">Русский</button>
+        <button class="language-button" data-language="en" type="button" aria-pressed="false">English</button>
+      </div>
+    </header>
+
+    <section class="task-panel" aria-labelledby="task-heading">
+      <span class="panel-sprout" aria-hidden="true">🌱</span>
+      <span class="panel-mushroom" aria-hidden="true">🍄</span>
+      <div class="task-copy">
+        <p><span aria-hidden="true">✏️</span> <span id="instruction">Напечатай слово:</span></p>
+        <h2 id="task-heading" class="target-word">дерево</h2>
+      </div>
+
+      <div class="input-area">
+        <div class="answer-row">
+          <label class="visually-hidden" id="input-label" for="word-input">Введите показанное слово</label>
+          <input id="word-input" class="word-input" type="text" autocomplete="off"
+            autocapitalize="none" spellcheck="false" maxlength="30" autofocus>
+          <button id="check-button" class="primary-button" type="button">Готово</button>
+        </div>
+        <div class="feedback-row">
+          <p id="message" class="message" aria-live="polite"></p>
+          <p class="score"><span aria-hidden="true">🧩</span> <span id="score-label">Выращено:</span> <strong id="score">0</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="garden" class="garden" aria-label="Волшебный сад">
+      <div id="garden-objects" class="garden-objects"></div>
+      <p id="empty-garden" class="empty-garden"><span aria-hidden="true">✨</span> Здесь скоро появятся первые растения…</p>
+    </section>
+
+    <button id="reset-button" class="reset-button" type="button"><span class="reset-icon" aria-hidden="true">↻</span> <span>Начать сад заново</span></button>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
+
